@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading text-center">
+                <h1 class="panel-title">User Information</h1>
+            </div>
+            <div class="panel-body text-center">
+                <form name="user-form">
+                    <div class="col-md-12" ng-show="hideDuplicateWarning">
+                        <h5 class="hide-dupe">This username has already been used</h5>
+                    </div>
+                    <div class="col-md-12 register-adj">
+                        <label for="firstName">First Name</label>
+                        <input id="firstName" ng-model="newUser.firstName" class="pull-right">
+                    </div>
+                    <div class="col-md-12 register-adj">
+                        <label for="lastName">Last Name</label>
+                        <input id="lastName" ng-model="newUser.lastName" class="pull-right">
+                    </div>
+                    <div class="col-md-12 register-adj">
+                        <label for="username">Username</label>
+                        <input id="username" ng-model="newUser.username" class="pull-right">
+                    </div>
+                    <div class="col-md-12 register-adj">
+                        <label for="phone">Phone Number</label>
+                        <input id="phone" ng-model="newUser.phoneNumber" class="pull-right">
+                    </div>
+                    <div class="col-md-12">
+                        <a><button class="btn btn-primary btn-lg" ng-click="createNewUser(newUser)">Register</button></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+

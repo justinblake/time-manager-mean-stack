@@ -1,0 +1,211 @@
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 panel-adj">
+        <div class="panel panel-default top-panel-adj">
+            <div class="panel-heading text-center panel-heading-adj">
+                <div class="panel-body">
+                    <h2 class="welcome-adj">Welcome Back {{userObject.firstName}}</h2>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="col-md-3"></div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 panel-adj">
+        <div class="panel panel-default top-panel-adj">
+            <div class="panel-heading text-center panel-heading-adj">
+                <div class="panel-body">
+                    <div class="col-md-5">
+                        <button class="btn btn-primary btn-lg" ng-click="showCreateNewTask()">Create New Task</button>
+                    </div>
+                    <div class="col-md-1"></div>
+
+                    <div class="col-md-5">
+                        <button class="btn btn-danger btn-lg" ng-click="showExistingTask()">View Existing Tasks
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="col-md-3"></div>
+</div>
+
+<!--Create New Manager-->
+
+<div class="row" ng-show="showCreateTask">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 text-center panel-adj">
+        <div class="panel panel-primary">
+            <div class="panel-heading text-center">
+                <h1 class="panel-title">Create A New Task</h1>
+            </div>
+            <div class="panel-body text-center">
+                <form name="createNew">
+                    <div class="col-md-6">
+                        <div class="col-md-12">
+                            <label for="title">Job Title</label>
+                            <input id="title" ng-model="event.title" class="pull-right" required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="description">Description</label>
+                            <input id="description" ng-model="event.description" class="pull-right" required>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="label-messup1">Spans Lunch</label>
+                            <label class="label-messup2"><input type="radio" ng-model="event.spanLunch" value="true" />True</label>
+                            <label class="label-messup3"><input type="radio"  ng-model="event.spanLunch" value="false" />False</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-md-12">
+                            <label for="startTime">Start Time</label>
+                            <input id="startTime" ng-model="event.startTime"
+                                   data-toggle="tooltip" data-placement="top" title="Select Start Time Below" class="pull-right">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="endTime">End Time</label>
+                            <input id="endTime" ng-model="event.endTime" class="pull-right">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-3"></div>
+</div>
+<div class="row my-repeat-pos" ng-show="showCreateTask">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 repeat-border text-center">
+        <div ng-repeat="time in timeArray track by $index" class="my-repeat">
+            <span class="my-span text-center" ng-click="selectTimeSpan($index)">{{time}}</span>
+        </div>
+        <div class="col-md-12 text-center">
+            <button class="btn btn-primary btn-lg" ng-click="createNewTask(event)">Submit</button>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+</div>
+
+<!--Show existing tasks-->
+
+<div class="row row-adj" ng-show="showAllTasks">
+    <div class="col-md-3" ng-repeat="task in userObject.tasks track by $index">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="panel panel-danger panel-height">
+                <div class="panel-heading text-center">
+                    <label class="edit-label-adj" for="editTitle" ng-show="showEditableFields">Title</label>
+                    <input id="editTitle" ng-model="updatedTask.title"
+                           placeholder="{{task.title}}" ng-show="showEditableFields">
+                    <h2 class="panel-title" ng-show="!showEditableFields">{{task.title}}</h2>
+                </div>
+                <div class="panel-body">
+
+                    <div class="col-md-12 text-center btn-landing-adj">
+                        <button class="btn btn-danger" ng-click="deleteSpecificTask(task)">Delete</button>
+                        <button class="btn btn-primary" ng-click="showEditableFields = true"
+                                ng-show="!showEditableFields">
+                            Update
+                        </button>
+
+                        <!--button to save updated tasks, hidden until Update button has been clicked-->
+
+                        <button class="btn btn-success success-adj"
+                                ng-click="updateSpecificTask($index, userObject.tasks[$index]); showEditableFields = false"
+                                ng-show="showEditableFields">Save
+                        </button>
+                    </div>
+
+                    <!--Task Description displayed by default-->
+
+                    <div class="col-md-12 container cont1">
+
+                        <h4 ng-show="!showEditableFields">Description: {{task.description}}</h4>
+                        <h4 ng-show="!showEditableFields">Start Time: {{task.startTime}}</h4>
+                        <h4 ng-show="!showEditableFields">End Time: {{task.endTime}}</h4>
+                        <h4 ng-show="!showEditableFields">Spans Lunch: {{task.spanLunch}}</h4>
+                    </div>
+                    <!--Task Update hidden on page load-->
+                    <div class="col-md-12 container cont2">
+                        <div class="col-md-12 edit-label-spacing">
+                            <label class="edit-label-adj" for="editDescription"
+                                   ng-if="showEditableFields">Description:</label>
+                            <input id="editDescription" ng-model="userObject.tasks[$index].description"
+                                   ng-if="showEditableFields"
+                                   placeholder="{{task.description}}" class="pull-right">
+                        </div>
+                        <div class="col-md-12 edit-label-spacing">
+                            <label class="edit-label-adj" for="editStartTime" ng-if="showEditableFields">Start
+                                Time:</label>
+                            <input id="editStartTime" ng-model="userObject.tasks[$index].startTime"
+                                   ng-if="showEditableFields"
+                                   placeholder="{{task.startTime}}" class="pull-right">
+                        </div>
+                        <div class="col-md-12 edit-label-spacing">
+                            <label class="edit-label-adj" for="editEndTime" ng-if="showEditableFields">End Time:</label>
+                            <input id="editEndTime" ng-model="userObject.tasks[$index].endTime"
+                                   ng-if="showEditableFields"
+                                   placeholder="{{task.endTime}}" class="pull-right">
+                        </div>
+                        <div class="col-md-12 edit-label-spacing">
+                            <label class="edit-label-adj" for="editSpan" ng-if="showEditableFields">Spans Lunch:</label>
+                            <input id="editSpan" ng-model="userObject.tasks[$index].spanLunch"
+                                   ng-if="showEditableFields"
+                                   placeholder="{{task.spanLunch}}" class="pull-right">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,79 @@
+.container-fluid {
+    padding-top: 15px;
+    font-size: 25px;
+}
+
+.container-fluid > a {
+    margin-right: 30px;
+}
+
+.navbar-default {
+    height: 75px;
+}
+
+.home-btn-adj {
+    width: 100%;
+    font-size: 300%;
+    height: 125px;
+}
+
+body {
+    background-color: darkgrey;
+}
+
+.panel {
+    border-radius: 6px;
+    box-shadow: 10px 10px 0 rgba(44, 62, 80, 0.55);
+    border-width: 4px;
+}
+
+.panel-heading {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.hide-dupe {
+    color: red;
+}
+
+input {
+    border-radius: 6px;
+    color: black;
+}
+
+/*buttons*/
+
+.btn-primary {
+    background-color: #3498DB;
+    border-color: #2980B9;
+    box-shadow: 5px 5px 0 rgba(44, 62, 80, 0.55);
+}
+
+.btn-danger {
+    background-color: #E74C4B;
+    border-color: #E74C4B;
+    box-shadow: 5px 5px 0 rgba(44, 62, 80, 0.55);
+    margin-right: 10px;
+}
+
+.btn-success {
+    background-color: #16CC31;
+    border-color: #209932;
+    box-shadow: 5px 5px 0 rgba(44, 62, 80, 0.55);
+}
+
+/*panels*/
+
+.panel-title {
+    font-size: 24px;
+}
+
+.panel-danger {
+    border-color: #E74C4B;
+}
+
+.panel-danger > .panel-heading {
+    background-color: #E74C3C;
+    border-color: #ebccd1;
+    color: white;
+}

@@ -1,0 +1,138 @@
+
+.my-repeat {
+    display: inline-block;
+    margin-bottom: 5px;
+    position: relative;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.my-repeat-pos {
+    margin-top: 20px;
+}
+
+.repeat-border {
+    border: 2px solid #2980B9;
+    padding: 20px 0 10px 8px;
+    border-radius: 6px;
+    background-color: #f5f5f5;
+    box-shadow: 10px 10px 0 rgba(44, 62, 80, 0.55);
+}
+
+.my-span {
+    border: 2px solid #209932;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 5px 5px 0 rgba(44, 62, 80, 0.55);
+    margin-right: 10px;
+    background-color: #16CC31;
+    color: white;
+    float: left;
+    width: 90px;
+}
+
+.my-span:hover {
+    background-color: #449d44;
+    border-color: #398439;
+}
+
+.welcome-adj {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.selection-adj {
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 10px 10px 0 rgba(44, 62, 80, 0.55);
+    border-width: 2px;
+    padding: 20px 30px 20px 30px;
+}
+
+.selection-adj-title {
+    margin: 5px 1px 15px 1px;
+}
+
+.panel-adj {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.panel-heading-adj {
+    border-bottom: none;
+}
+
+.top-panel-adj {
+    border-color: #337AB5;
+    border-radius: 8px;
+}
+
+.panel-default > .panel-heading {
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #337ab7;
+    border-radius: 6px;
+}
+
+.panel-height {
+    height: 245px;
+}
+
+.row-adj {
+    margin-top: 40px;
+}
+
+.edit-label-adj {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.edit-label-spacing {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    margin-left: -15px;
+}
+
+.cont1 {
+    padding: 0;
+    margin-top: 10px;
+}
+
+.cont2 {
+    padding: 0;
+    margin-top: 10px;
+}
+
+.success-adj {
+    width: 72px;
+}
+
+
+
+.label-messup1 {
+    margin-right: 6%;
+}
+
+.label-messup2 {
+    margin-left: 2%;
+}
+
+.label-messup3 {
+    margin-right: 11%;
+}
+
+@media screen and (min-width: 1450px) {
+    .label-messup1 {
+        margin-right: 12%;
+    }
+
+    .label-messup2 {
+        margin-left: 8%;
+    }
+
+    .label-messup3 {
+        margin-right: -6%;
+    }
+}
+

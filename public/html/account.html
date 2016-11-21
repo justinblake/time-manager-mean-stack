@@ -1,0 +1,63 @@
+
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-3">
+        <div class="panel panel-primary">
+            <div class="panel-heading text-center">
+                <h1 class="panel-title">User Information</h1>
+            </div>
+            <div class="panel-body text-center">
+                <form name="user-form">
+
+                    <div class="col-md-12 register-adj" ng-hide="editUserInfo">
+                        <label for="firstName">First Name</label>
+                        <input id="firstName" ng-value="userObject.firstName" class="pull-right">
+                    </div>
+                    <div class="col-md-12 register-adj" ng-hide="editUserInfo">
+                        <label for="lastName">Last Name</label>
+                        <input id="lastName" ng-value="userObject.lastName" class="pull-right">
+                    </div>
+                    <div class="col-md-12 register-adj" ng-hide="editUserInfo">
+                        <label for="username">Username</label>
+                        <input id="username" ng-value="userObject.username" class="pull-right">
+                    </div>
+                    <div class="col-md-12 register-adj" ng-hide="editUserInfo">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input id="phoneNumber" ng-value="userObject.phoneNumber" class="pull-right">
+                    </div>
+
+                    <div class="col-md-12 register-adj" ng-show="editUserInfo">
+                        <label for="editFirstName">First Name</label>
+                        <input id="editFirstName" ng-value="userObject.firstName" ng-model="editedUser.firstName" class="pull-right">
+                    </div>
+                    <div class="col-md-12 register-adj" ng-show="editUserInfo">
+                        <label for="editLastName">Last Name</label>
+                        <input id="editLastName" ng-value="userObject.lastName" ng-model="editedUser.lastName" class="pull-right">
+                    </div>
+                    <div class="col-md-12 register-adj" ng-show="editUserInfo">
+                        <label for="editUsername">Username</label>
+                        <input id="editUsername" ng-value="userObject.username" ng-model="editedUser.username" class="pull-right">
+                    </div>
+                    <div class="col-md-12 register-adj" ng-show="editUserInfo">
+                        <label for="editPhoneNumber">Phone Number</label>
+                        <input id="editPhoneNumber" ng-value="userObject.phoneNumber" ng-model="editedUser.phoneNumber" class="pull-right">
+                    </div>
+
+                    <div class="col-md-6">
+                        <button class="btn btn-primary"  ng-click="editUserInfo = true">Edit Info</button>
+                    </div>
+
+                    <div class="col-md-6">
+                        <button class="btn btn-danger" ng-click="deleteUser(userObject)">Delete</button>
+                    </div>
+
+                    <div class="col-md-6" ng-show="editUserInfo">
+                        <a><button class="btn btn-success" ng-click="updateUserInfo(editedUser)">Save</button></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4"></div>
+</div>
